@@ -194,3 +194,32 @@ make_pizza(16, "pepperoni")
 make_pizza(12, "mushrooms", "green peppers", "extra cheese")
 
 # usando argumentos nomeados arbitrários
+
+
+def build_profile(first, last, **user_info):
+    """Constrói um dicionário contendo tudo que sabemos sobre um usuário"""
+    profile = {}
+    profile["first_name"] = first
+    profile["last_name"] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+
+user_profile = build_profile(
+    "albert", "einstein", location="princeton", field="physics"
+)
+print(user_profile)
+
+# armazenando funções em módulos
+
+import nome_do_modulo
+
+nome_do_modulo.nome_da_funcao()
+from nome_do_modulo import nome_da_funcao
+from nome_do_modulo import nome_da_funcao as nf
+import nome_do_modulo as nm
+
+# importando todas as funções de um módulo
+
+from nome_do_modulo import *
